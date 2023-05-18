@@ -7,38 +7,31 @@ namespace StringCollections
     {
         private static void Main(string[] args)
         {
-            List<string> stringList = new List<string>()
+            string[] arrayOfStrings = {"pedro", "teste", "fachada", "pedro", "programação"};
+            List<string> stringList = new List<string>();
+            Stack<string> stringStack = new Stack<string>();
+            Queue<string> stringQueue = new Queue<string>();
+            HashSet<string> stringHashSet = new HashSet<string>();
+
+            foreach(string s in arrayOfStrings)
             {
-                new string("pedro"),
-                new string("fachada"),
-                new string("teste"),
-                new string("pedro"),
-                new string("programação")
-            };
-            Stack<string> stringStack = new Stack<string>()
+                stringList.Add(s);
+            }
+
+            foreach(string s in arrayOfStrings)
             {
-                new string("pedro"),
-                new string("fachada"),
-                new string("teste"),
-                new string("pedro"),
-                new string("programação")
-            };
-            Queue<string> stringQueue = new Queue<string>()
+                stringStack.Push(s);
+            }
+
+            foreach(string s in arrayOfStrings)
             {
-                new string("pedro"),
-                new string("fachada"),
-                new string("teste"),
-                new string("pedro"),
-                new string("programação")
-            };
-            HashSet<string> stringHashSet = new HashSet<string>()
+                stringQueue.Enqueue(s);
+            }
+
+            foreach(string s in arrayOfStrings)
             {
-                new string("pedro"),
-                new string("fachada"),
-                new string("teste"),
-                new string("pedro"),
-                new string("programação")
-            };
+                stringHashSet.Add(s);
+            }
 
             Console.WriteLine("This is the List's order");
             foreach(string s in stringList)
@@ -63,6 +56,7 @@ namespace StringCollections
             {
                 Console.WriteLine(s);
             }
+
         }
     }
 }
