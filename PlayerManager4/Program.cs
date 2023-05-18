@@ -37,7 +37,11 @@ namespace PlayerManager4
                 new Player("An even better player", 500),
             };
 
+            /// First method just orders by Score
             SortPlayerList();
+
+            /// Remove comment from method if you want to order by name
+            /// SortPlayerList(new CompareByName(true));
         }
 
         /// <summary>
@@ -196,6 +200,11 @@ namespace PlayerManager4
         private void SortPlayerList()
         {
             playerList.Sort();
+        }
+
+        private void SortPlayerList(IComparer<Player> nameComparer)
+        {
+            playerList.Sort(nameComparer);
         }
     }
 }
